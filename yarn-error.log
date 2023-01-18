@@ -1,0 +1,71 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/max/Library/pnpm:PATH_TO_FLUTTER_GIT_DIRECTORY/flutter/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/max/Library/pnpm:PATH_TO_FLUTTER_GIT_DIRECTORY/flutter/bin:/usr/local/sbin:/Users/max/.rvm/bin:/Users/max/fvm/default/bin:/Users/max/.pub-cache/bin:/Users/max/Downloads/2.8.1/bin/cache/dart-sdk/bin:/Users/max/Downloads/2.8.1/bin:/Users/max/.rvm/bin:/Users/max/fvm/default/bin:/Users/max/.pub-cache/bin:/Users/max/Downloads/2.8.1/bin/cache/dart-sdk/bin:/Users/max/Downloads/2.8.1/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.18.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/max/Library/Caches/Yarn/v6/npm-glob-8.1.0-d388f656593ef708ee3e34640fdfb99a9fd1c33e-integrity/node_modules/glob/README.md' -> '/Users/max/Projects/utils/node_modules/@rollup/plugin-commonjs/node_modules/glob/README.md'
+
+npm manifest: 
+  {
+    "name": "utils",
+    "version": "1.0.0",
+    "description": "utils javascript",
+    "type": "module",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "dev": "rollup -w -c",
+      "build": "rollup -c",
+      "test": "TS_NODE_PROJECT=tsconfig.test.json mocha"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/geektech-team/utils.git"
+    },
+    "keywords": [
+      "utils",
+      "javascript"
+    ],
+    "author": "Jimmie Max",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/geektech-team/utils/issues"
+    },
+    "homepage": "https://github.com/geektech-team/utils#readme",
+    "devDependencies": {
+      "@rollup/plugin-commonjs": "^24.0.0",
+      "@rollup/plugin-node-resolve": "^15.0.1",
+      "@rollup/plugin-typescript": "^11.0.0",
+      "@types/chai": "^4.3.4",
+      "@types/mocha": "^10.0.1",
+      "@types/node": "^18.11.18",
+      "chai": "^4.3.7",
+      "mocha": "^10.2.0",
+      "rollup": "^3.10.0",
+      "ts-node": "^10.9.1",
+      "tsconfig-paths": "^4.1.2",
+      "tslib": "^2.4.1",
+      "typescript": "^4.9.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

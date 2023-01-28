@@ -1,4 +1,4 @@
-import { ifNotFunction } from "./validate";
+import { ifNotFunction } from "../helper/validate";
 
 /**
  * 节流

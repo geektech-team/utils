@@ -1,5 +1,5 @@
 import { FUNC_ERROR_TEXT } from "./constant";
-import { isFunction } from "./type";
+import { isFunction } from "../utils/type";
 
 export const ifNotFunction = (fn: unknown) => {
   if (!isFunction(fn)) {

@@ -3,16 +3,17 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 
 export default {
-  input: "./lib/index.ts",
-  output: [
-    {
-      file: "dist/index.cjs.js",
-      format: "cjs",
-    },
-    {
-      file: "dist/index.es.js",
-      format: "es",
-    },
-  ],
+  input: {
+    index: "./lib/index.ts",
+    'type': './lib/utils/type.ts',
+    'debounce': './lib/utils/debounce.ts',
+    'throttle': './lib/utils/throttle.ts',
+    'deep-clone': './lib/utils/deep-clone.ts',
+    'time-format': './lib/utils/time-format.ts',
+    'memoize': './lib/utils/memoize.ts',
+  },
+  output: {
+    dir: "dist",
+  },
   plugins: [resolve(), commonjs(), typescript()],
 };

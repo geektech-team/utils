@@ -11,6 +11,8 @@ export default {
     'deep-clone': './lib/utils/deep-clone.ts',
     'time-format': './lib/utils/time-format.ts',
     'memoize': './lib/utils/memoize.ts',
+    'copy-to-clipboard': './lib/utils/copy-to-clipboard.ts',
+    'enum-model': './lib/models/enum-model.ts',
   },
   output: {
     dir: "dist",

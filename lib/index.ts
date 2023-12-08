@@ -1,11 +1,14 @@
-export * from "./utils/type";
-export * from "./utils/debounce";
-export * from "./utils/throttle";
-export * from "./utils/deep-clone";
-export * from "./utils/time-format";
-export * from "./utils/memoize";
+export * from './methods/type';
+export * from './methods/debounce';
+export * from './methods/throttle';
+export * from './methods/deep-clone';
+export * from './methods/time-format';
+export * from './methods/memoize';
 
-export * from "./models/enum-model";
+export * from './models/enum-model';
+
+export * from './cookie';
+export * from './event-bus';
 
 // web window
-export * from './utils/copy-to-clipboard';
+export * from './methods/copy-to-clipboard';

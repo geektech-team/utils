@@ -5,12 +5,12 @@ class EventBus {
         this.list = {};
     }
 
-    $on(name: string, fn: any) {
+    on(name: string, fn: any) {
         this.list[name] = this.list[name] || [];
         this.list[name].push(fn);
     }
 
-    $emit(name: string, data?: any) {
+    emit(name: string, data?: any) {
         if (this.list[name]) {
             this.list[name].forEach((fn: any) => {
                 fn(data);
@@ -18,7 +18,7 @@ class EventBus {
         }
     }
 
-    $off(name: string) {
+    off(name: string) {
         if (this.list[name]) {
             delete this.list[name];
         }

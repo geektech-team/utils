@@ -5,7 +5,7 @@ export * from './methods/deep-clone';
 export * from './methods/time-format';
 export * from './methods/memoize';
 
-export * from './models/enum-model';
+export * from './models/enum';
 
 export * from './cookie';
 export * from './event-bus';

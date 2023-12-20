@@ -1,4 +1,4 @@
-class EventBus {
+export class EventBus {
     list: { [key: string]: Array<any> };
 
     constructor() {

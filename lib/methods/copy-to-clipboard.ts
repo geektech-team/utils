@@ -2,7 +2,6 @@
 /**
  * copyToClipboard
  * @param obj object to deep clone
- * @returns {Function}
  */
 
 export function copyToClipboard(

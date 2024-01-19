@@ -1,9 +1,9 @@
 /**
  * memoize
  * @param callback
- * @returns {Function}
+ * @returns {(...args: any[]) => R}
  */
-export function memoize(callback: Function) {
+export function memoize<R>(callback: (...args: any[]) => R) {
   const cache = new Map();
   return function (this: any, ...args: any[]) {
     const key = JSON.stringify(args);

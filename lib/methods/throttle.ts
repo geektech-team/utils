@@ -4,9 +4,9 @@ import { ifNotFunction } from "../helper/validate";
  * 节流
  * @param fn {*}  执行函数
  * @param delay {*}  节流时间,毫秒
- * @returns {Function}
+ * @returns {(...args: any[]) => void}
  */
-export function throttle(callback: Function, delay = 60): typeof callback {
+export function throttle(callback: (...args: any[]) => void, delay = 60): typeof callback {
   ifNotFunction(callback);
   let flag = true;
     return function (

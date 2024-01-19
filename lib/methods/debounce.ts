@@ -3,11 +3,11 @@ import { ifNotFunction } from "../helper/validate";
 /**
  * debounce
  * @param obj object to deep clone
- * @returns {Function}
+ * @returns {(...args: any[]) => void}
  */
 
 export function debounce(
-  callback: Function,
+  callback: (...args: any[]) => void,
   delay = 60
 ): (this: any, ...args: any[]) => void {
   ifNotFunction(callback);

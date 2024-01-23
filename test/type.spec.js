@@ -11,7 +11,7 @@ import {
   isRegExp,
   isString,
   isUndefined,
-} from "./../dist/index.es.js";
+} from "./../dist/index.js";
 
 describe("function isArray", () => {
   it("isArray([]) should equal true", () => {

@@ -1,6 +1,6 @@
 import { expect, assert } from "chai";
 import { describe, it } from "mocha";
-import { memoize } from "../dist/index.es.js";
+import { memoize } from "../dist/index.js";
 
 describe("function memoize", () => {
   function sum(numbers) {

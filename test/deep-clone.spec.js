@@ -1,6 +1,6 @@
 import { expect, assert } from "chai";
 import { describe, it } from "mocha";
-import { deepClone } from "../dist/index.es.js";
+import { deepClone } from "../dist/index.js";
 
 describe("function deepClone", () => {
   const originalData = {

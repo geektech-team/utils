@@ -1,6 +1,6 @@
 import { expect, assert } from "chai";
 import { describe, it } from "mocha";
-import { timeFormat } from "../dist/index.js";
+import { timeFormat } from "../es/index.js";
 
 describe("function timeFormat", () => {
   const result = timeFormat(new Date('2023-5-30'), 'yyyy-MM-dd hh:mm:ss');

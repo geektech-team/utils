@@ -1,12 +1,13 @@
 import { expect, assert } from "chai";
 import { describe, it } from "mocha";
-import { deepClone } from "../dist/index.js";
+import { deepClone } from "../es/index.js";
 
 describe("function deepClone", () => {
   const originalData = {
     a: 1,
     b: "old",
     c: [1, 2, 3],
+    e: new Date(),
   };
   const result = deepClone(originalData);
   result.b = "new";
@@ -25,6 +26,11 @@ describe("function deepClone", () => {
   });
   it("result.c.length should return 4", () => {
     assert.lengthOf(result.c, 4);
+  });
+  it("result.e.getTime should return originalData.e.getTime", () => {
+    // console.log(1, result.e.getTime());
+    // console.log(2, originalData.d);
+    expect(result.e.getTime()).to.equal(originalData.e.getTime());
   });
   originalData.d = originalData;
   it("deepClone(originalData).d should return target.d", () => {

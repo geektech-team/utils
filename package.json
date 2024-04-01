@@ -1,17 +1,25 @@
 {
   "name": "@geektech/utils",
-  "version": "2.2.1",
+  "version": "2.3.1",
   "description": "utils javascript",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "targets": {
+    "babel-esm": {
+      "main": "es/index.js"
+    },
+    "node": {
+      "main": "cjs/index.js"
+    }
+  },
+  "types": "./es/index.d.ts",
   "files": [
-    "dist"
+    "es",
+    "cjs"
   ],
   "scripts": {
-    "dev": "rollup -w -c",
-    "build": "rollup -c",
+    "dev": "rollup -w -c --bundleConfigAsCjs",
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "mocha"
   },
   "repository": {

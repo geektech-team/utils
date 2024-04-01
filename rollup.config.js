@@ -1,23 +1,86 @@
-import resolve from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
-import commonjs from "@rollup/plugin-commonjs";
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
 
-export default {
-  input: {
-    index: "./lib/index.ts",
-    'type': './lib/methods/type.ts',
-    'debounce': './lib/methods/debounce.ts',
-    'throttle': './lib/methods/throttle.ts',
-    'deep-clone': './lib/methods/deep-clone.ts',
-    'time-format': './lib/methods/time-format.ts',
-    'memoize': './lib/methods/memoize.ts',
-    'copy-to-clipboard': './lib/methods/copy-to-clipboard.ts',
-    'enum-model': './lib/models/enum.ts',
-    'event-bus': './lib/event-bus.ts',
-    'cookie': './lib/cookie.ts',
+const modules = [
+  {
+    name: 'index',
+    path: './lib/index.ts',
   },
+  {
+    name: 'type',
+    path: './lib/methods/type.ts',
+  },
+  {
+    name: 'debounce',
+    path: './lib/methods/debounce.ts',
+  },
+  {
+    name: 'throttle',
+    path: './lib/methods/throttle.ts',
+  },
+  {
+    name: 'deep-clone',
+    path: './lib/methods/deep-clone.ts',
+  },
+  {
+    name: 'time-format',
+    path: './lib/methods/time-format.ts',
+  },
+  {
+    name: 'memoize',
+    path: './lib/methods/memoize.ts',
+  },
+  {
+    name: 'copy-to-clipboard',
+    path: './lib/methods/copy-to-clipboard.ts',
+  },
+  {
+    name: 'enum-model',
+    path: './lib/models/enum.ts',
+  },
+  {
+    name: 'event-bus',
+    path: './lib/event-bus.ts',
+  },
+  {
+    name: 'cookie',
+    path: './lib/cookie.ts',
+  },
+];
+
+class Module {
+  input = {};
+  output = {};
+  plugins = [];
+  constructor({ plugins, output, modules }) {
+    this.output = output;
+    this.plugins = plugins;
+    modules.forEach(item => {
+      this.input[item.name] = item.path;
+    });
+  }
+}
+
+const esModules = new Module({
+  modules,
   output: {
-    dir: "dist",
+    dir: 'es',
+    format: 'es',
   },
-  plugins: [resolve(), commonjs(), typescript()],
-};
+  plugins: [resolve(), typescript()],
+});
+const cjsModules = new Module({
+  modules,
+  output: {
+    dir: 'cjs',
+    format: 'cjs',
+  },
+  plugins: [
+    resolve(),
+    commonjs(),
+    typescript({ tsconfig: './tsconfig-cjs.json' }),
+  ],
+});
+
+export default [esModules, cjsModules];

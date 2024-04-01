@@ -1,6 +1,6 @@
 import { expect, assert } from "chai";
 import { describe, it } from "mocha";
-import { EnumModel } from "../dist/index.js";
+import { EnumModel } from "../es/index.js";
 
 const Client = {
   AppIOS: "APP_IOS",

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, it } from "mocha";
-import { beginningOfDate, endOfDate } from "../dist/index.js";
+import { beginningOfDate, endOfDate } from "../es/index.js";
 
 describe("function beginningOfDate", () => {
   const result = beginningOfDate(new Date('2023-5-30 11:11:11'));

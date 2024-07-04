@@ -15,7 +15,12 @@ export class EnumModel {
     if (!this.getEnum(value)) this.enums.push({ value, display, alias });
   }
 
-  getEnum(enumValue: string | number) {
+  deleteEnum(value: string | number) {
+    const deleteEnumIndex = this.enums.findIndex(item => item.value === value);
+    if (deleteEnumIndex >= 0) this.enums.splice(deleteEnumIndex, 1);
+  }
+
+  getEnum(enumValue: string | number): EnumItem | null {
     return this.enums.find(({ value }) => value === enumValue) || null;
   }
 
@@ -24,11 +29,11 @@ export class EnumModel {
     return enumItem?.display ?? defaultDisplay;
   }
 
-  getEnumValues() {
+  getEnumValues(): EnumItem['value'][] {
     return this.enums.map(({ value }) => value);
   }
 
-  getEnums() {
-    return this.enums.map((item) => item);
+  getEnums(): EnumItem[] {
+    return this.enums.map(item => item);
   }
 }

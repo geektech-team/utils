@@ -23,4 +23,6 @@ describe("clientEnumModel deepClone", () => {
   expect(clientEnumValues.includes(Client.AppIOS)).to.be.true;
   expect(clientEnumValues.includes(Client.AppAndroid)).to.be.true;
   expect(clientEnumValues.includes(Client.MiniProgramWeChat)).to.be.true;
+  clientEnumModel.deleteEnum(AppIOS);
+  expect(clientEnumModel.getEnum(AppIOS)).is.null;
 });
